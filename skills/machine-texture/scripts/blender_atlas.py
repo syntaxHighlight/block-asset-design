@@ -7,7 +7,12 @@ import math
 import statistics
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'machine-design/shared/scripts'))
+# Release packages keep the checks beside texture; source checkouts retain skills/.
+_script_dir = Path(__file__).resolve().parent
+_checks_dir = _script_dir.parent / 'checks'
+if not _checks_dir.is_dir():
+    _checks_dir = _script_dir.parents[1] / 'machine-design/shared/scripts'
+sys.path.insert(0, str(_checks_dir))
 from blender_objects import choose_objects
 from mesh_math import sub, cross, norm, singular_values
 

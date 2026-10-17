@@ -1,9 +1,9 @@
 # 提取清单与工具
 
-先按[文件位置约定](../../machine-design/shared/references/workflow.md#文件位置)确定目标项目。以下路径均为示例，替换为技能实际安装位置、来源包和项目路径；命令可从任意目录运行。Python 3.10+，仅裁切图片时需要安装本技能 `requirements.txt` 中的依赖。
+先按[文件位置约定](../../machine-design/shared/references/workflow.md#文件位置)确定目标项目，并按[脚本适配约定](../../machine-design/shared/references/workflow.md#脚本适配)准备调用。以下路径均为示例，替换为项目脚本副本、来源包和项目路径；命令可从任意目录运行。Python 3.10+，仅裁切图片时需要安装项目工具副本 `resources/requirements.txt` 中的依赖。
 
 ```sh
-python3 "/path/to/installed-skills/mod-resource-extract/scripts/extract_resources.py" \
+python3 "/path/to/project/tools/machine-design/resources/extract_resources.py" \
   --archive "/path/to/downloads/mod.jar" \
   --manifest "/path/to/project/assets/resources/extraction.json" \
   --output "/path/to/project/assets/resources/example-mod/1.0"

@@ -14,6 +14,8 @@ npx skills add syntaxHighlight/machine-design --skill '*'
 
 ## 使用
 
+首次需要配套脚本时，由 [machine-setup](skills/machine-setup/SKILL.md) 从其中固定的 release 附件准备项目内副本；后续任务可按需修改这份副本，重复 setup 保留已有修改。setup 只准备文件，脚本审阅、适配和必要验证随实际任务进行。
+
 向助手说明目标，并提供模型路径和参考资料，例如：
 
 > 用 machine-design 修改这台机器的外壳，保留现有动画和接口贴图。

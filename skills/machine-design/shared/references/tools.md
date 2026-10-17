@@ -1,13 +1,13 @@
 # 场景盘点与几何／UV 检查
 
-先按[文件位置约定](workflow.md#文件位置)确定目标项目。下列示例中的 `MD_CHECK_DIR` 是主技能安装目录内的 `shared/scripts/`，`MD_PROJECT_DIR` 是目标项目；替换为实际绝对路径后，可从任意目录运行。Blender 脚本使用当前连接提供的代码执行能力，或通过本机 `blender` 可执行程序运行。后台检查使用 `--disable-autoexec`，不加载工程内任意自动脚本；因此依赖受禁脚本的运动必须另外在可信交互环境验证。
+先按[文件位置约定](workflow.md#文件位置)确定目标项目，并按[脚本适配约定](workflow.md#脚本适配)准备调用。下列示例中的 `MD_CHECK_DIR` 是项目脚本副本中的 `checks/`，`MD_PROJECT_DIR` 是目标项目；替换为实际绝对路径后，可从任意目录运行。Blender 脚本使用当前连接提供的代码执行能力，或通过本机 `blender` 可执行程序运行。后台检查使用 `--disable-autoexec`，不加载工程内任意自动脚本；因此依赖受禁脚本的运动必须另外在可信交互环境验证。
 
 ## 场景盘点与检查
 
 场景结构和引用问题由[场景盘点](../../../machine-inspect/SKILL.md)解释；网格和 UV 数据分别按[几何检查](../../../machine-geometry-check/SKILL.md)与[UV 检查](../../../machine-uv-check/SKILL.md)判断。各模式复用同一工具，不代表需要全部运行。
 
 ```sh
-MD_CHECK_DIR="/path/to/installed-skills/machine-design/shared/scripts"
+MD_CHECK_DIR="/path/to/project/tools/machine-design/checks"
 MD_PROJECT_DIR="/path/to/project"
 blender --background --factory-startup --disable-autoexec "$MD_PROJECT_DIR/assets/machines/example/source.blend" --python-exit-code 1 --python "$MD_CHECK_DIR/blender_audit.py" -- --mode inventory --collection Machine --output "$MD_PROJECT_DIR/build/machine-design/example/inventory.json"
 blender --background --factory-startup --disable-autoexec "$MD_PROJECT_DIR/assets/machines/example/source.blend" --python-exit-code 1 --python "$MD_CHECK_DIR/blender_audit.py" -- --mode geometry --objects Body Door --evaluated --grid 0.0625 --origin 0 0 0 --output "$MD_PROJECT_DIR/build/machine-design/example/geometry.json"

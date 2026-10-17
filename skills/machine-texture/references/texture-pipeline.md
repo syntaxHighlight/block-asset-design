@@ -2,18 +2,18 @@
 
 流程：整理几何与语义 → Blender 展开及检查 → 导出已有 UV/几何/语义 → 绘制并打包 → 指定生产 UV 层写回 → 明确连接材质 → 实际审阅。
 
-先按[文件位置约定](../../machine-design/shared/references/workflow.md#文件位置)确定目标项目。以下示例中的 `MD_TEXTURE_DIR` 是已安装的贴图技能目录，`MD_PROJECT_DIR` 是目标项目；替换为实际绝对路径后，可从任意目录运行。项目内路径优先沿用已有约定。
+先按[文件位置约定](../../machine-design/shared/references/workflow.md#文件位置)确定目标项目，并按[脚本适配约定](../../machine-design/shared/references/workflow.md#脚本适配)准备调用。以下示例中的 `MD_TEXTURE_DIR` 是项目脚本副本中的 `texture/`，`MD_PROJECT_DIR` 是目标项目；替换为实际绝对路径后，可从任意目录运行。项目内路径优先沿用已有约定。
 
 ## 原生数据与导出
 
 `md_edge_role` 为 EDGE INT，0 不描边、1 形体边、2 装配缝；`md_material_role` 为 FACE INT，对象字符串属性 `md_role_names` 存 JSON 映射，如 `{"0":"steel","1":"paint"}`。缺少面属性时可显式提供 `--default-role steel`，不是推断语义；缺少边属性表示不自动加结构线。UV seam 不转为边角色。
 
 ```sh
-MD_TEXTURE_DIR="/path/to/installed-skills/machine-texture"
+MD_TEXTURE_DIR="/path/to/project/tools/machine-design/texture"
 MD_PROJECT_DIR="/path/to/project"
-blender --background --factory-startup --disable-autoexec "$MD_PROJECT_DIR/assets/machines/example/source.blend" --python-exit-code 1 --python "$MD_TEXTURE_DIR/scripts/blender_atlas.py" -- export --objects Body --uv-layer Source --source-size 512 512 --density 16 --default-role steel --output "$MD_PROJECT_DIR/build/machine-design/example/charts.json"
-python3 "$MD_TEXTURE_DIR/scripts/paint_uv_atlas.py" --input "$MD_PROJECT_DIR/build/machine-design/example/charts.json" --config "$MD_PROJECT_DIR/assets/machines/example/materials.json" --output "$MD_PROJECT_DIR/assets/machines/example/atlas"
-blender --background --factory-startup --disable-autoexec "$MD_PROJECT_DIR/assets/machines/example/source.blend" --python-exit-code 1 --python "$MD_TEXTURE_DIR/scripts/blender_atlas.py" -- apply --input "$MD_PROJECT_DIR/build/machine-design/example/charts.json" --layout "$MD_PROJECT_DIR/assets/machines/example/atlas/pixel-atlas-layout.json" --target-layer Production --output "$MD_PROJECT_DIR/assets/machines/example/production.blend"
+blender --background --factory-startup --disable-autoexec "$MD_PROJECT_DIR/assets/machines/example/source.blend" --python-exit-code 1 --python "$MD_TEXTURE_DIR/blender_atlas.py" -- export --objects Body --uv-layer Source --source-size 512 512 --density 16 --default-role steel --output "$MD_PROJECT_DIR/build/machine-design/example/charts.json"
+python3 "$MD_TEXTURE_DIR/paint_uv_atlas.py" --input "$MD_PROJECT_DIR/build/machine-design/example/charts.json" --config "$MD_PROJECT_DIR/assets/machines/example/materials.json" --output "$MD_PROJECT_DIR/assets/machines/example/atlas"
+blender --background --factory-startup --disable-autoexec "$MD_PROJECT_DIR/assets/machines/example/source.blend" --python-exit-code 1 --python "$MD_TEXTURE_DIR/blender_atlas.py" -- apply --input "$MD_PROJECT_DIR/build/machine-design/example/charts.json" --layout "$MD_PROJECT_DIR/assets/machines/example/atlas/pixel-atlas-layout.json" --target-layer Production --output "$MD_PROJECT_DIR/assets/machines/example/production.blend"
 ```
 
 导出操作读取源网格，要求对象处于 Object Mode，并指定已有的源 UV 层。所选对象若有启用视口显示的修改器，或多个对象共用同一网格数据，脚本会拒绝导出；需先准备符合要求的导出源，脚本不会自动应用修改器或拆分共享数据。`--source-size` 给源 UV 所在二维画布的宽高，避免非方图比例被忽略。根据各表面奇异值检查保形和一致密度，`--density-tolerance` 默认 .05；超出时返回诊断，不能自动拉伸到一致。每个对象等比换算至指定密度，连续 UV 边组成岛。保留原 UV，不重新展开几何。
@@ -46,7 +46,7 @@ blender --background --factory-startup --disable-autoexec "$MD_PROJECT_DIR/asset
  "shapes":[{"id":"panel","material":"steel","outer":{"points":[[0,0],[2,0],[2,1],[0,1]],"edges":["outer","none","outer","none"]},"holes":[]}]}
 ```
 
-运行 `python3 "$MD_TEXTURE_DIR/scripts/fill_regions.py" --input "$MD_PROJECT_DIR/assets/machines/example/regions.json" --output "$MD_PROJECT_DIR/assets/machines/example/panels" --preview`。配置中的 `tile` 路径相对于输入 JSON 所在目录。默认不覆盖已有产物；`--force` 仅替换本轮同名生成文件。它只输出独立 PNG，不执行三维展开或 UV 写回。
+运行 `python3 "$MD_TEXTURE_DIR/fill_regions.py" --input "$MD_PROJECT_DIR/assets/machines/example/regions.json" --output "$MD_PROJECT_DIR/assets/machines/example/panels" --preview`。配置中的 `tile` 路径相对于输入 JSON 所在目录。默认不覆盖已有产物；`--force` 仅替换本轮同名生成文件。它只输出独立 PNG，不执行三维展开或 UV 写回。
 
 轮廓坐标 X 右、Y 下，顶点列表末尾不重复首顶点；孔洞严格在内部且不相交。每条边 `none/outer/seam` 分别表示不绘制边带、绘制完整边带、绘制半宽接缝。`tile` 与 `procedural` 二选一；tile 为调用者提供且有权使用的图。`padding_px` 是透明留白，不是防串色扩边。
 
