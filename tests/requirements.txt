@@ -1,3 +1,2 @@
 -r ../skills/machine-texture/requirements.txt
 -r ../skills/mod-resource-extract/requirements.txt
-PyYAML>=6

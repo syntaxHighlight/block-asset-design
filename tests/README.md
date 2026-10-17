@@ -23,7 +23,7 @@ python3 -m venv /tmp/machine-design-tests
 blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python tests/run_blender.py
 ```
 
-集成测试失败时返回非零退出码。依赖中的 PyYAML 供另行运行 skill-creator 的 `quick_validate.py` 使用，工具脚本本身不需要它。
+集成测试失败时返回非零退出码。
 
 ## 测试范围
 

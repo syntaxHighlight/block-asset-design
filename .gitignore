@@ -7,3 +7,4 @@ output/
 *.blend[0-9]*
 .env
 .env.*
+/.local/
