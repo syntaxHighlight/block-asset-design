@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "record_kind": "metadata-only-catalog-provenance",
+  "upstream": {
+    "name": "Immersive Engineering",
+    "version": "1.21.1-12.4.2-194",
+    "archive_sha256": "816685b898eed52080d08a4009042c511560ecc185601f21fe744936b63b5127",
+    "source_tag": "12.4.2-194",
+    "source_commit": "583a182549d284a35c813b55ac2a0d1fddcf945a"
+  },
+  "restored_from": {
+    "archive_name": "cleanup-2026-10-15.zip",
+    "member_prefix": "art/machine_tool/legacy-skill/assets/ie-textures/",
+    "metadata_sha256": {
+      "catalog.json": "cd54ad441f6e16ebfebfbefa782c33077eca07bf7c73877501fcf3407eda9db4",
+      "manifest.json": "f0cb864ee62e47e3acec8453e740cd432e6a2ccdcd9b6427eda7e47fb69f019c",
+      "LICENSE.IE.txt": "1cfd83b717bae58527751de2d494e8d0f4c8c8124049dbc521ee66569bd4a5a1",
+      "NOTICE.md": "4291faf54665e32bad95b1c8b477845b4a01fa8fe8272738b680a784df60add3"
+    }
+  },
+  "included_files": [
+    "INDEX.md",
+    "NOTICE.md",
+    "LICENSE.IE.txt",
+    "catalog.json",
+    "provenance.json"
+  ],
+  "asset_status": "not-included"
+}

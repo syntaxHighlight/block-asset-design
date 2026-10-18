@@ -9,19 +9,21 @@ description: 为目标项目准备机器工具脚本的本地副本；用于首�
 
 ## 固定来源
 
-- Release：`v1.2`
-- 脚本包：<https://github.com/syntaxHighlight/machine-design/releases/download/v1.2/machine-design-scripts.tar.gz>
-- SHA-256：<https://github.com/syntaxHighlight/machine-design/releases/download/v1.2/machine-design-scripts.tar.gz.sha256>
+- Release：`v1.3`
+- 脚本包：<https://github.com/syntaxHighlight/machine-design/releases/download/v1.3/machine-design-scripts.tar.gz>
+- SHA-256：<https://github.com/syntaxHighlight/machine-design/releases/download/v1.3/machine-design-scripts.tar.gz.sha256>
 
-直接使用上述地址，无需用户选择版本。附件缺失、下载失败或校验失败时，报告准备未完成及原因，保留项目已有文件；不替换为 `latest`、其他版本或仓库源码归档。
+直接使用上述地址，无需用户选择版本。附件缺失、下载失败或校验失败时，保留项目已有文件，说明准备尚未完成及原因；不替换为 `latest`、其他版本或仓库源码归档。
 
 ## 准备流程
 
 1. 确认目标项目根目录，读取其工具目录约定。已有机器工具副本时复用其路径；首次准备默认使用项目内的 `tools/machine-design/`。
-2. 已有副本且未要求升级时，保留全部本地文件并返回实际路径。不能把来源未知的副本标成此 release；目录内容无法确认时报告现状，不覆盖安装。
+2. 已有副本且未要求升级时，保留全部本地文件并返回实际路径。来源未知的副本需如实说明，不能标成此 release；目录内容无法确认时，报告现状，不覆盖安装。
 3. 首次准备或明确要求升级时，将指定脚本包与校验文件下载到独立临时目录，核对 SHA-256 并检查归档条目后解包，确保解包不会写出临时目录。
-4. 首次准备时，将包内的 `checks/`、`texture/`、`review/`、`resources/` 及随附文件放入选定的项目工具目录，保留包内相对布局。升级时与现有副本比较并合并，保留本地适配；无法判断的冲突保留现状并说明，不用重新解压覆盖目录。
+4. 首次准备时，将包内的 `checks/`、`texture/`、`review/`、`resources/` 及随附文件放入选定的项目工具目录，保留包内相对布局。升级时，与现有副本比较并合并，保留本地适配。无法判断的冲突保持现状并说明，不能重新解压覆盖目录。
 
 ## 完成
 
-在对话中报告项目工具目录、本次下载的 release（或已有副本的已知来源），以及本次是新准备还是复用。准备过程不执行包内脚本、不运行场景检查；下载和布局检查仅确认脚本包已就位，不代表脚本已经过任务验证。
+在对话中说明项目工具目录、本次下载的 release（或已有副本的已知来源），以及本次是首次准备、复用还是升级。升级时说明是否完成、尚未解决的冲突及保留旧文件的影响；仅完成部分合并时，不能标为升级完成。
+
+准备过程不执行包内脚本、不运行场景检查；下载和布局检查仅确认脚本包已就位，不代表脚本已经过任务验证。
