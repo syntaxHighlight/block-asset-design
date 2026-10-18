@@ -1,0 +1,1115 @@
+{
+  "schema_version": 1,
+  "upstream": {
+    "name": "Immersive Engineering",
+    "version": "1.21.1-12.4.2-194",
+    "authors": "BluSunrize and Damien A.W. Hazard (JAR metadata)",
+    "license": "Blu's License of Common Sense",
+    "license_file": "LICENSE.IE.txt",
+    "notice_file": "NOTICE.md",
+    "license_url": "https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/LICENSE",
+    "license_sha256": "1cfd83b717bae58527751de2d494e8d0f4c8c8124049dbc521ee66569bd4a5a1",
+    "source_commit": "583a182549d284a35c813b55ac2a0d1fddcf945a",
+    "source_tag": "12.4.2-194",
+    "usage_scope": "Original and cropped IE assets for IE addon development; not a general-purpose redistributable art pack. Preserve original attribution and license; independent redistribution needs applicable permission."
+  },
+  "sources": {
+    "metal_device_capacitor_lv_side_in": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/capacitor_lv_side_in.png",
+      "sha256": "00dc2e42e73e9a28fa2c8bd4ef0ef563d82f7f7f246aa001cf3e1d28ae2e5b92",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_device_capacitor_lv_side_out": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/capacitor_lv_side_out.png",
+      "sha256": "8c71d92bd29c5ce0599224a673852d332e67014f9b75d4d042437bfcb7210710",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_device_capacitor_lv_side_none": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/capacitor_lv_side_none.png",
+      "sha256": "9c401f37d9d750d726c3b498ca35c53f0448d519032503f3263d3d3f4a1f1e96",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_device_capacitor_mv_side_in": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/capacitor_mv_side_in.png",
+      "sha256": "81d9ec2c8a8ca1227e4b69b74d46d1c3bdd44133e004cffa436be42041eb2e50",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_device_capacitor_mv_side_out": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/capacitor_mv_side_out.png",
+      "sha256": "a6d85e8b86733ffa26882690ed154d378369d21ec542b3b93065d41cb5d99cb3",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_device_capacitor_mv_side_none": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/capacitor_mv_side_none.png",
+      "sha256": "c28f546746d2b35171be846ab98d68316242d789f1034baf038cc6f30cfb8820",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_device_capacitor_hv_side_in": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/capacitor_hv_side_in.png",
+      "sha256": "c003809eadbcba6af706e2a5ff6193f9a83678995bdc7e533dcb1e55715317c1",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_device_capacitor_hv_side_out": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/capacitor_hv_side_out.png",
+      "sha256": "cff0bb3c1397995ecb072b8e84eb104d6671a8e242fdc4febbaedeaa034a59bc",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_device_capacitor_hv_side_none": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/capacitor_hv_side_none.png",
+      "sha256": "22c558e09a63aea0474bb99c3a1bb0dbfb5838506bd68738beb71214d91c1de9",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_device_fluid_pump_side_in": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/fluid_pump_side_in.png",
+      "sha256": "e1c2c1cc3bd45fa596a58969e14e07b7272640a05bb91e4ec63648463cf8560b",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_device_barrel_up_in": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/barrel_up_in.png",
+      "sha256": "a59d0c904b2da2d28076b9acac7d15ebb6ea3a5397121948f61b821e0db04dda",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_device_fluid_pump_side_out": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/fluid_pump_side_out.png",
+      "sha256": "10f6fcb7bedfe841a275674c631e07cfa3d319b930c552b18dcc2e345d271f75",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_device_barrel_up_out": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/barrel_up_out.png",
+      "sha256": "747400e020e906edfcabe5b1537ec6f7b8eb4549ca5ec327a6a112bc02a66a32",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_device_fluid_pump_side_none": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/fluid_pump_side_none.png",
+      "sha256": "81569f9216c82f6fa4bd4a6732bab0bb13248995bbbabe1c16d6d0bb0fd26608",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_device_barrel_up_none": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/barrel_up_none.png",
+      "sha256": "6cd2d2ffb093350f695cc1ad994f731387f080f401b89564c2e0d58e217402a2",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_device_pipe_valve_connector": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/pipe_valve_connector.png",
+      "sha256": "ddbf62bc5899e3fd1f360928c4e63d7c8784a377ec5c09af9848a5e9512690c7",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_device_pipe_valve_end": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/pipe_valve_end.png",
+      "sha256": "0631bfbd61847059a3091e9770de0fdd4226c19a9a0fdf7f618dd87047725cf0",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_device_pipe_valve_side": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/pipe_valve_side.png",
+      "sha256": "5f70eef32b16f6690e0ff3e23e5bc865c34081f5c00970842acca6ea8b693837",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_device_fluid_pipe": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/fluid_pipe.png",
+      "sha256": "1031f354c3b278e49f4fad58b58a9cde69f8479b8a331337402412be6b476336",
+      "size": [
+        32,
+        32
+      ]
+    },
+    "metal_device_hatch_front": {
+      "path": "assets/immersiveengineering/textures/block/metal_device/hatch_front.png",
+      "sha256": "38284ce35dabaab3cd703508c44c0e17dc0690a342ce53c0e6a13aa51811ec06",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_sheetmetal_steel": {
+      "path": "assets/immersiveengineering/textures/block/metal/sheetmetal_steel.png",
+      "sha256": "64a4a38f62b73f213e8a6b7aa26c50f05790403bb0e8a716104707444c1d7fcf",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_sheetmetal_iron": {
+      "path": "assets/immersiveengineering/textures/block/metal/sheetmetal_iron.png",
+      "sha256": "e6764ad06bd2c406d950af1d75cd5ef8c6ef7b3eebc31b4ca5bdd0cf0600ce7c",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_sheetmetal_aluminum": {
+      "path": "assets/immersiveengineering/textures/block/metal/sheetmetal_aluminum.png",
+      "sha256": "0e4c92fe6ca58fe5c4bd250f2b1de3ebe7aeb162f5d78932f17747adc1dc8013",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_sheetmetal_copper": {
+      "path": "assets/immersiveengineering/textures/block/metal/sheetmetal_copper.png",
+      "sha256": "4237bf868a5182ef4cce3de937ec1d99c0a4ec9ec0aabced0650b6f6fcd03c97",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_decoration_light_engineering": {
+      "path": "assets/immersiveengineering/textures/block/metal_decoration/light_engineering.png",
+      "sha256": "39d8f8e6b5a3a3036c115e9243eb9ea80a457b35b46fc5668175f2433fcf6dd9",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_decoration_heavy_engineering": {
+      "path": "assets/immersiveengineering/textures/block/metal_decoration/heavy_engineering.png",
+      "sha256": "11914be5096e70dea04b92735018698d339a5d34cec7abbaf24fb15e60a770cc",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_decoration_redstone_engineering": {
+      "path": "assets/immersiveengineering/textures/block/metal_decoration/redstone_engineering.png",
+      "sha256": "1c492c7c3e026b23d20896021ff905d8ccd468046d0e9d7ecd952f891f56ba12",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_decoration_radiator": {
+      "path": "assets/immersiveengineering/textures/block/metal_decoration/radiator.png",
+      "sha256": "8fcb20cc207c6128ec8a32f852219314cdbda6058fd105be60c637eab3a815b8",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_decoration_steel_scaffolding_top_standard": {
+      "path": "assets/immersiveengineering/textures/block/metal_decoration/steel_scaffolding_top_standard.png",
+      "sha256": "89f1ac151fe76b334db4042001217826c1398db6ef6ce5adb113c075918c4969",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_decoration_steel_scaffolding_top_grate_top": {
+      "path": "assets/immersiveengineering/textures/block/metal_decoration/steel_scaffolding_top_grate_top.png",
+      "sha256": "d5b0a7f2c8cf550b416c141e375df6d3a261854e21dcee1cec0b30e03a8e667d",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_decoration_aluminum_scaffolding_top_grate_top": {
+      "path": "assets/immersiveengineering/textures/block/metal_decoration/aluminum_scaffolding_top_grate_top.png",
+      "sha256": "817e0509f1a7a8a57fd58f4d38fe18349fb13f9333e4632d5dfcba733843d9e3",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "connector_connector_lv": {
+      "path": "assets/immersiveengineering/textures/block/connector/connector_lv.png",
+      "sha256": "6464dfd910ca461f4ccde07e238d5a023319b0be4fa7f914eec7e3a424c40b71",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "connector_connector_mv": {
+      "path": "assets/immersiveengineering/textures/block/connector/connector_mv.png",
+      "sha256": "6ed31424c0a14d099e8f5e7639823a1a82af7a196c898ae1511c7d9164e52530",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "connector_connector_hv": {
+      "path": "assets/immersiveengineering/textures/block/connector/connector_hv.png",
+      "sha256": "6ed31424c0a14d099e8f5e7639823a1a82af7a196c898ae1511c7d9164e52530",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "connector_connector_redstone": {
+      "path": "assets/immersiveengineering/textures/block/connector/connector_redstone.png",
+      "sha256": "71160f2743296c298768c21e7f1e66461d9980c6f6356bfa1ee7f494a06c17c6",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "conveyor_conveyor": {
+      "path": "assets/immersiveengineering/textures/block/conveyor/conveyor.png",
+      "sha256": "81064ed19cd11c65750aa69bfc9303cd80c0eb6d354885901c0d4ba90e65ca8c",
+      "size": [
+        16,
+        256
+      ]
+    },
+    "conveyor_off": {
+      "path": "assets/immersiveengineering/textures/block/conveyor/off.png",
+      "sha256": "57d7190bed093310ac26ec3f06c0a57115753dfeac53605d2d48ad16d876b8d1",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "conveyor_casing_side": {
+      "path": "assets/immersiveengineering/textures/block/conveyor/casing_side.png",
+      "sha256": "947a0d83617169b57aae0f7e59182f4d6d516e03b0c99697a223ae5f7ff3ecd3",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "conveyor_casing_top": {
+      "path": "assets/immersiveengineering/textures/block/conveyor/casing_top.png",
+      "sha256": "dd50883caca8f77f01d9e2a68dbeb69db2d26afad4fe745fafe486804f35ed79",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_decoration_sign_icon_electric": {
+      "path": "assets/immersiveengineering/textures/block/metal_decoration/sign/icon_electric.png",
+      "sha256": "a8fa032caefdf2eddea69744b249010e6ee746501cd7cd8d197fab410baf966b",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_decoration_sign_icon_hot": {
+      "path": "assets/immersiveengineering/textures/block/metal_decoration/sign/icon_hot.png",
+      "sha256": "c16a64439f41fa0110d339c329cdfc1837b018f4bd1f9b60ed3bf88b8c8cb763",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_decoration_sign_icon_attention": {
+      "path": "assets/immersiveengineering/textures/block/metal_decoration/sign/icon_attention.png",
+      "sha256": "4f8c39b1df5f8ce75479fd130443a6280acbc70c06241477ec2776b6c8828464",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_decoration_sign_icon_arrow_left": {
+      "path": "assets/immersiveengineering/textures/block/metal_decoration/sign/icon_arrow_left.png",
+      "sha256": "703842817922dee5aa908205443e073afcf587aab401677fca92fd087f9f3605",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "metal_decoration_sign_icon_arrow_right": {
+      "path": "assets/immersiveengineering/textures/block/metal_decoration/sign/icon_arrow_right.png",
+      "sha256": "5b676232dd8389bfcfa15a52a50518e7d4b2537bbe0de8e7788dc54e6712c254",
+      "size": [
+        16,
+        16
+      ]
+    },
+    "multiblocks_multiblock_components": {
+      "path": "assets/immersiveengineering/textures/block/multiblocks/multiblock_components.png",
+      "sha256": "2ae3b2f71296f09bd55d5dd2e59f39ea308299a8baddb449bebb3f0be4ecd7b1",
+      "size": [
+        128,
+        128
+      ]
+    }
+  },
+  "entries": [
+    {
+      "id": "capacitor_lv_side_in",
+      "label": "低压电容器侧面／输入",
+      "category": "power",
+      "tags": [
+        "电力",
+        "接口",
+        "低压",
+        "输入"
+      ],
+      "source": "metal_device_capacitor_lv_side_in",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "models/block/metal_device/capacitor_lv.json 使用 conf_sides / side_top_bottom，base_name 对应此原始状态贴图；电容器侧面，区别于多方块机器插口和电线连接器。"
+    },
+    {
+      "id": "capacitor_lv_side_out",
+      "label": "低压电容器侧面／输出",
+      "category": "power",
+      "tags": [
+        "电力",
+        "接口",
+        "低压",
+        "输出"
+      ],
+      "source": "metal_device_capacitor_lv_side_out",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "models/block/metal_device/capacitor_lv.json 使用 conf_sides / side_top_bottom，base_name 对应此原始状态贴图；电容器侧面，区别于多方块机器插口和电线连接器。"
+    },
+    {
+      "id": "capacitor_lv_side_none",
+      "label": "低压电容器侧面／未配置",
+      "category": "power",
+      "tags": [
+        "电力",
+        "接口",
+        "低压",
+        "未配置"
+      ],
+      "source": "metal_device_capacitor_lv_side_none",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "models/block/metal_device/capacitor_lv.json 使用 conf_sides / side_top_bottom，base_name 对应此原始状态贴图；电容器侧面，区别于多方块机器插口和电线连接器。"
+    },
+    {
+      "id": "capacitor_mv_side_in",
+      "label": "中压电容器侧面／输入",
+      "category": "power",
+      "tags": [
+        "电力",
+        "接口",
+        "中压",
+        "输入"
+      ],
+      "source": "metal_device_capacitor_mv_side_in",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "models/block/metal_device/capacitor_mv.json 使用 conf_sides / side_top_bottom，base_name 对应此原始状态贴图；电容器侧面，区别于多方块机器插口和电线连接器。"
+    },
+    {
+      "id": "capacitor_mv_side_out",
+      "label": "中压电容器侧面／输出",
+      "category": "power",
+      "tags": [
+        "电力",
+        "接口",
+        "中压",
+        "输出"
+      ],
+      "source": "metal_device_capacitor_mv_side_out",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "models/block/metal_device/capacitor_mv.json 使用 conf_sides / side_top_bottom，base_name 对应此原始状态贴图；电容器侧面，区别于多方块机器插口和电线连接器。"
+    },
+    {
+      "id": "capacitor_mv_side_none",
+      "label": "中压电容器侧面／未配置",
+      "category": "power",
+      "tags": [
+        "电力",
+        "接口",
+        "中压",
+        "未配置"
+      ],
+      "source": "metal_device_capacitor_mv_side_none",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "models/block/metal_device/capacitor_mv.json 使用 conf_sides / side_top_bottom，base_name 对应此原始状态贴图；电容器侧面，区别于多方块机器插口和电线连接器。"
+    },
+    {
+      "id": "capacitor_hv_side_in",
+      "label": "高压电容器侧面／输入",
+      "category": "power",
+      "tags": [
+        "电力",
+        "接口",
+        "高压",
+        "输入"
+      ],
+      "source": "metal_device_capacitor_hv_side_in",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "models/block/metal_device/capacitor_hv.json 使用 conf_sides / side_top_bottom，base_name 对应此原始状态贴图；电容器侧面，区别于多方块机器插口和电线连接器。"
+    },
+    {
+      "id": "capacitor_hv_side_out",
+      "label": "高压电容器侧面／输出",
+      "category": "power",
+      "tags": [
+        "电力",
+        "接口",
+        "高压",
+        "输出"
+      ],
+      "source": "metal_device_capacitor_hv_side_out",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "models/block/metal_device/capacitor_hv.json 使用 conf_sides / side_top_bottom，base_name 对应此原始状态贴图；电容器侧面，区别于多方块机器插口和电线连接器。"
+    },
+    {
+      "id": "capacitor_hv_side_none",
+      "label": "高压电容器侧面／未配置",
+      "category": "power",
+      "tags": [
+        "电力",
+        "接口",
+        "高压",
+        "未配置"
+      ],
+      "source": "metal_device_capacitor_hv_side_none",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "models/block/metal_device/capacitor_hv.json 使用 conf_sides / side_top_bottom，base_name 对应此原始状态贴图；电容器侧面，区别于多方块机器插口和电线连接器。"
+    },
+    {
+      "id": "fluid_pump_side_in",
+      "label": "流体泵侧面／输入",
+      "category": "fluid",
+      "tags": [
+        "流体",
+        "接口",
+        "输入"
+      ],
+      "source": "metal_device_fluid_pump_side_in",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_device/fluid_pump_side_in.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "barrel_top_in",
+      "label": "金属桶顶面／输入",
+      "category": "fluid",
+      "tags": [
+        "流体",
+        "接口",
+        "输入"
+      ],
+      "source": "metal_device_barrel_up_in",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_device/barrel_up_in.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "fluid_pump_side_out",
+      "label": "流体泵侧面／输出",
+      "category": "fluid",
+      "tags": [
+        "流体",
+        "接口",
+        "输出"
+      ],
+      "source": "metal_device_fluid_pump_side_out",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_device/fluid_pump_side_out.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "barrel_top_out",
+      "label": "金属桶顶面／输出",
+      "category": "fluid",
+      "tags": [
+        "流体",
+        "接口",
+        "输出"
+      ],
+      "source": "metal_device_barrel_up_out",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_device/barrel_up_out.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "fluid_pump_side_none",
+      "label": "流体泵侧面／未配置",
+      "category": "fluid",
+      "tags": [
+        "流体",
+        "接口",
+        "未配置"
+      ],
+      "source": "metal_device_fluid_pump_side_none",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_device/fluid_pump_side_none.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "barrel_top_none",
+      "label": "金属桶顶面／未配置",
+      "category": "fluid",
+      "tags": [
+        "流体",
+        "接口",
+        "未配置"
+      ],
+      "source": "metal_device_barrel_up_none",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_device/barrel_up_none.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "pipe_valve_connector",
+      "label": "阀门连接面",
+      "category": "fluid",
+      "tags": [
+        "流体",
+        "阀门"
+      ],
+      "source": "metal_device_pipe_valve_connector",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_device/pipe_valve_connector.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "pipe_valve_end",
+      "label": "阀门端面",
+      "category": "fluid",
+      "tags": [
+        "流体",
+        "阀门"
+      ],
+      "source": "metal_device_pipe_valve_end",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_device/pipe_valve_end.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "pipe_valve_side",
+      "label": "阀门侧面",
+      "category": "fluid",
+      "tags": [
+        "流体",
+        "阀门"
+      ],
+      "source": "metal_device_pipe_valve_side",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_device/pipe_valve_side.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "fluid_pipe",
+      "label": "流体管道 UV 图集",
+      "category": "fluid",
+      "tags": [
+        "管道",
+        "接口"
+      ],
+      "source": "metal_device_fluid_pipe",
+      "rect": null,
+      "kind": "atlas",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_device/fluid_pipe.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "hatch_front",
+      "label": "舱门正面",
+      "category": "fluid",
+      "tags": [
+        "检修",
+        "接口"
+      ],
+      "source": "metal_device_hatch_front",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_device/hatch_front.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "sheetmetal_steel",
+      "label": "钢板",
+      "category": "panels",
+      "tags": [
+        "板材",
+        "底纹",
+        "钢"
+      ],
+      "source": "metal_sheetmetal_steel",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal/sheetmetal_steel.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "sheetmetal_iron",
+      "label": "铁板",
+      "category": "panels",
+      "tags": [
+        "板材",
+        "底纹",
+        "铁"
+      ],
+      "source": "metal_sheetmetal_iron",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal/sheetmetal_iron.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "sheetmetal_aluminum",
+      "label": "铝板",
+      "category": "panels",
+      "tags": [
+        "板材",
+        "底纹",
+        "铝"
+      ],
+      "source": "metal_sheetmetal_aluminum",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal/sheetmetal_aluminum.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "sheetmetal_copper",
+      "label": "铜板",
+      "category": "panels",
+      "tags": [
+        "板材",
+        "底纹",
+        "铜"
+      ],
+      "source": "metal_sheetmetal_copper",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal/sheetmetal_copper.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "light_engineering",
+      "label": "轻型工程块",
+      "category": "structure",
+      "tags": [
+        "结构",
+        "工程"
+      ],
+      "source": "metal_decoration_light_engineering",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_decoration/light_engineering.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "heavy_engineering",
+      "label": "重型工程块",
+      "category": "structure",
+      "tags": [
+        "结构",
+        "工程"
+      ],
+      "source": "metal_decoration_heavy_engineering",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_decoration/heavy_engineering.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "redstone_engineering",
+      "label": "红石工程块",
+      "category": "structure",
+      "tags": [
+        "结构",
+        "工程"
+      ],
+      "source": "metal_decoration_redstone_engineering",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_decoration/redstone_engineering.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "radiator",
+      "label": "散热片",
+      "category": "structure",
+      "tags": [
+        "结构",
+        "工程"
+      ],
+      "source": "metal_decoration_radiator",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_decoration/radiator.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "steel_scaffolding_top_standard",
+      "label": "钢脚手架标准顶面",
+      "category": "structure",
+      "tags": [
+        "结构",
+        "格栅"
+      ],
+      "source": "metal_decoration_steel_scaffolding_top_standard",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_decoration/steel_scaffolding_top_standard.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "steel_scaffolding_top_grate_top",
+      "label": "钢格栅顶面",
+      "category": "structure",
+      "tags": [
+        "结构",
+        "格栅"
+      ],
+      "source": "metal_decoration_steel_scaffolding_top_grate_top",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_decoration/steel_scaffolding_top_grate_top.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "aluminum_scaffolding_top_grate_top",
+      "label": "铝格栅顶面",
+      "category": "structure",
+      "tags": [
+        "结构",
+        "格栅"
+      ],
+      "source": "metal_decoration_aluminum_scaffolding_top_grate_top",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_decoration/aluminum_scaffolding_top_grate_top.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "connector_lv",
+      "label": "低压电线连接器 UV 图集",
+      "category": "connectors",
+      "tags": [
+        "连接器",
+        "电线",
+        "图集"
+      ],
+      "source": "connector_connector_lv",
+      "rect": null,
+      "kind": "atlas",
+      "evidence": "原始 connector/connector_lv.png，仅作为连接器模型的 UV 图集；不能将整张或端帽当作多方块机器的电力插口。"
+    },
+    {
+      "id": "connector_mv",
+      "label": "中压电线连接器 UV 图集",
+      "category": "connectors",
+      "tags": [
+        "连接器",
+        "电线",
+        "图集"
+      ],
+      "source": "connector_connector_mv",
+      "rect": null,
+      "kind": "atlas",
+      "evidence": "原始 connector/connector_mv.png，仅作为连接器模型的 UV 图集；不能将整张或端帽当作多方块机器的电力插口。"
+    },
+    {
+      "id": "connector_hv",
+      "label": "高压电线连接器 UV 图集",
+      "category": "connectors",
+      "tags": [
+        "连接器",
+        "电线",
+        "图集"
+      ],
+      "source": "connector_connector_hv",
+      "rect": null,
+      "kind": "atlas",
+      "evidence": "原始 connector/connector_hv.png，仅作为连接器模型的 UV 图集；不能将整张或端帽当作多方块机器的电力插口。"
+    },
+    {
+      "id": "connector_redstone",
+      "label": "红石连接器 UV 图集",
+      "category": "connectors",
+      "tags": [
+        "连接器",
+        "电线",
+        "图集"
+      ],
+      "source": "connector_connector_redstone",
+      "rect": null,
+      "kind": "atlas",
+      "evidence": "原始 connector/connector_redstone.png，仅作为连接器模型的 UV 图集；不能将整张或端帽当作多方块机器的电力插口。"
+    },
+    {
+      "id": "conveyor_running",
+      "label": "运行输送带帧条",
+      "category": "conveyor",
+      "tags": [
+        "传送带",
+        "输送带"
+      ],
+      "source": "conveyor_conveyor",
+      "rect": null,
+      "kind": "animation",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/conveyor/conveyor.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "conveyor_stopped",
+      "label": "静止输送带",
+      "category": "conveyor",
+      "tags": [
+        "传送带",
+        "输送带"
+      ],
+      "source": "conveyor_off",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/conveyor/off.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "conveyor_casing_side",
+      "label": "输送带外壳侧面",
+      "category": "conveyor",
+      "tags": [
+        "传送带",
+        "输送带"
+      ],
+      "source": "conveyor_casing_side",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/conveyor/casing_side.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "conveyor_casing_top",
+      "label": "输送带外壳顶面",
+      "category": "conveyor",
+      "tags": [
+        "传送带",
+        "输送带"
+      ],
+      "source": "conveyor_casing_top",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/conveyor/casing_top.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "icon_electric",
+      "label": "电气危险标识",
+      "category": "signs",
+      "tags": [
+        "标识",
+        "透明叠层"
+      ],
+      "source": "metal_decoration_sign_icon_electric",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_decoration/sign/icon_electric.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "icon_hot",
+      "label": "高温标识",
+      "category": "signs",
+      "tags": [
+        "标识",
+        "透明叠层"
+      ],
+      "source": "metal_decoration_sign_icon_hot",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_decoration/sign/icon_hot.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "icon_attention",
+      "label": "注意标识",
+      "category": "signs",
+      "tags": [
+        "标识",
+        "透明叠层"
+      ],
+      "source": "metal_decoration_sign_icon_attention",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_decoration/sign/icon_attention.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "icon_arrow_left",
+      "label": "左箭头",
+      "category": "signs",
+      "tags": [
+        "标识",
+        "透明叠层"
+      ],
+      "source": "metal_decoration_sign_icon_arrow_left",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_decoration/sign/icon_arrow_left.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "icon_arrow_right",
+      "label": "右箭头",
+      "category": "signs",
+      "tags": [
+        "标识",
+        "透明叠层"
+      ],
+      "source": "metal_decoration_sign_icon_arrow_right",
+      "rect": null,
+      "kind": "tile",
+      "evidence": "IE 原始资源 assets/immersiveengineering/textures/block/metal_decoration/sign/icon_arrow_right.png；整张保留，不推断其中局部用途。"
+    },
+    {
+      "id": "multiblock_components_atlas",
+      "label": "多方块机器公共部件图集",
+      "category": "reference",
+      "tags": [
+        "接口",
+        "图集",
+        "面板"
+      ],
+      "source": "multiblocks_multiblock_components",
+      "rect": null,
+      "kind": "atlas",
+      "evidence": "原始公共部件图集；选用已标定的独立条目，未标定区域须结合模型 UV 与用途确认。"
+    },
+    {
+      "id": "machine_power_socket",
+      "label": "机器电力插口／黑框橙芯",
+      "category": "interfaces",
+      "tags": [
+        "电力",
+        "接口",
+        "插口",
+        "中压",
+        "MV"
+      ],
+      "source": "multiblocks_multiblock_components",
+      "rect": [
+        0,
+        64,
+        16,
+        80
+      ],
+      "kind": "tile",
+      "evidence": "refinery.obj, material=multiblock_components, face f 213/108/3 207/106/3 209/109/3 210/1/3，原图 UV [0,0.375,0.125,0.5]。该图案不表示 IE 中专属的中压接口，也不实现能源能力。",
+      "model_evidence": {
+        "path": "assets/immersiveengineering/models/block/metal_multiblock/refinery.obj",
+        "sha256": "2cd9ce447f4837425fa35c0af5ef46ae76aae0bf0c3ed6d03e0e2a81159ee841"
+      }
+    },
+    {
+      "id": "machine_red_indicator",
+      "label": "红色指示灯方板",
+      "category": "interfaces",
+      "tags": [
+        "接口",
+        "面板",
+        "控制"
+      ],
+      "source": "multiblocks_multiblock_components",
+      "rect": [
+        96,
+        48,
+        112,
+        64
+      ],
+      "kind": "tile",
+      "evidence": "refinery.obj, material=multiblock_components, f 222/115/1 223/113/1 224/116/1 225/117/1，原图 UV [0.75, 0.5, 0.875, 0.625]。按外观命名；模型映射不证明输入输出或控制功能。",
+      "model_evidence": {
+        "path": "assets/immersiveengineering/models/block/metal_multiblock/refinery.obj",
+        "sha256": "2cd9ce447f4837425fa35c0af5ef46ae76aae0bf0c3ed6d03e0e2a81159ee841"
+      }
+    },
+    {
+      "id": "machine_orange_control",
+      "label": "橙色指示与黑色槽口面板",
+      "category": "interfaces",
+      "tags": [
+        "接口",
+        "面板",
+        "控制"
+      ],
+      "source": "multiblocks_multiblock_components",
+      "rect": [
+        48,
+        32,
+        64,
+        40
+      ],
+      "kind": "tile",
+      "evidence": "refinery.obj, material=multiblock_components, f 186/96/1 187/97/1 188/98/1 189/66/1，原图 UV [0.375, 0.6875, 0.5, 0.75]。按外观命名；模型映射不证明输入输出或控制功能。",
+      "model_evidence": {
+        "path": "assets/immersiveengineering/models/block/metal_multiblock/refinery.obj",
+        "sha256": "2cd9ce447f4837425fa35c0af5ef46ae76aae0bf0c3ed6d03e0e2a81159ee841"
+      }
+    },
+    {
+      "id": "machine_grille_panel",
+      "label": "横向格栅面板",
+      "category": "interfaces",
+      "tags": [
+        "接口",
+        "面板",
+        "格栅"
+      ],
+      "source": "multiblocks_multiblock_components",
+      "rect": [
+        32,
+        80,
+        48,
+        104
+      ],
+      "kind": "tile",
+      "evidence": "refinery.obj, material=multiblock_components, f 207/102/1 98/103/1 208/104/1 209/105/1，原图 UV [0.25, 0.1875, 0.375, 0.375]。按外观命名；模型映射不证明输入输出或控制功能。",
+      "model_evidence": {
+        "path": "assets/immersiveengineering/models/block/metal_multiblock/refinery.obj",
+        "sha256": "2cd9ce447f4837425fa35c0af5ef46ae76aae0bf0c3ed6d03e0e2a81159ee841"
+      }
+    },
+    {
+      "id": "machine_grille_indicator",
+      "label": "带橙色小槽的格栅面板",
+      "category": "interfaces",
+      "tags": [
+        "接口",
+        "面板",
+        "格栅"
+      ],
+      "source": "multiblocks_multiblock_components",
+      "rect": [
+        16,
+        80,
+        32,
+        104
+      ],
+      "kind": "tile",
+      "evidence": "refinery.obj, material=multiblock_components, f 210/106/2 211/107/2 212/103/2 213/102/2，原图 UV [0.125, 0.1875, 0.25, 0.375]。按外观命名；模型映射不证明输入输出或控制功能。",
+      "model_evidence": {
+        "path": "assets/immersiveengineering/models/block/metal_multiblock/refinery.obj",
+        "sha256": "2cd9ce447f4837425fa35c0af5ef46ae76aae0bf0c3ed6d03e0e2a81159ee841"
+      }
+    }
+  ]
+}

@@ -21,8 +21,8 @@ class DistributionTests(unittest.TestCase):
         root=Path(self.temp.name)
         self.tools=root/'project tools'; self.project=root/'project assets'; self.runner=root/'unrelated cwd'
         self.project.mkdir(); self.runner.mkdir()
-        self.archive=root/'machine-design-scripts.tar.gz'
-        result=subprocess.run([sys.executable,'-B',str(support.ROOT/'scripts/package-machine-tools.py'),
+        self.archive=root/'block-asset-design-scripts.tar.gz'
+        result=subprocess.run([sys.executable,'-B',str(support.ROOT/'scripts/package-asset-tools.py'),
                                '--output',str(self.archive)],cwd=self.runner,capture_output=True,text=True)
         self.assertEqual(result.returncode,0,result.stderr)
         with tarfile.open(self.archive) as package:
@@ -126,7 +126,7 @@ class DistributionTests(unittest.TestCase):
         expected=f'{hashlib.sha256(self.archive.read_bytes()).hexdigest()}  {self.archive.name}\n'
         self.assertEqual(self.archive.with_name(self.archive.name+'.sha256').read_text(),expected)
         original=self.archive.read_bytes()
-        result=subprocess.run([sys.executable,'-B',str(support.ROOT/'scripts/package-machine-tools.py'),
+        result=subprocess.run([sys.executable,'-B',str(support.ROOT/'scripts/package-asset-tools.py'),
                                '--output',str(self.archive)],cwd=self.runner,capture_output=True,text=True)
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertEqual(self.archive.read_bytes(),original)
@@ -160,11 +160,11 @@ import importlib.util
 from pathlib import Path
 import sys
 root = Path(sys.argv[1]).resolve()
-spec = importlib.util.spec_from_file_location('blender_atlas', root / 'machine-texture/scripts/blender_atlas.py')
+spec = importlib.util.spec_from_file_location('blender_atlas', root / 'block-asset-design/texture/scripts/blender_atlas.py')
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 for name in ('blender_objects', 'mesh_math'):
-    assert Path(sys.modules[name].__file__).parent == root / 'machine-design/shared/scripts', name
+    assert Path(sys.modules[name].__file__).parent == root / 'block-asset-design/shared/scripts', name
 '''
         result=subprocess.run([sys.executable,'-I','-B','-c',code,str(support.ROOT/'skills')],
                               cwd=self.runner,capture_output=True,text=True)

@@ -96,7 +96,7 @@ class ExtractionTests(unittest.TestCase):
         import subprocess
         import sys
         notice=self.use_external_notice(); self.manifest.write_text(json.dumps(self.spec))
-        result=subprocess.run([sys.executable,str(support.ROOT/'skills/mod-resource-extract/scripts/extract_resources.py'),
+        result=subprocess.run([sys.executable,str(support.ROOT/'skills/block-asset-design/mod-resource-extract/scripts/extract_resources.py'),
                                '--archive',str(self.archive),'--manifest',str(self.manifest),'--output',str(self.out)],
                               cwd=self.root,capture_output=True,text=True)
         self.assertEqual(result.returncode,0,result.stderr)

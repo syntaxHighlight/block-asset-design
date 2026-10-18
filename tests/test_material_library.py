@@ -6,7 +6,7 @@ import unittest
 
 
 ROOT = Path(__file__).resolve().parents[1]
-LIBRARY = ROOT / 'skills/machine-design/references/material-library'
+LIBRARY = ROOT / 'skills/block-asset-design/references/material-library'
 IE = LIBRARY / 'ie-textures'
 
 
@@ -28,7 +28,7 @@ class MaterialLibraryTests(unittest.TestCase):
 
     def test_fixed_source_metadata_is_preserved(self) -> None:
         expected = {
-            'catalog.json': 'cd54ad441f6e16ebfebfbefa782c33077eca07bf7c73877501fcf3407eda9db4',
+            'catalog.json': '928a635820279bfd3ff08d093c9235bd627faff3194eae0b7f32825a5f0c7777',
             'LICENSE.IE.txt': '1cfd83b717bae58527751de2d494e8d0f4c8c8124049dbc521ee66569bd4a5a1',
         }
         for name, digest in expected.items():
@@ -38,12 +38,12 @@ class MaterialLibraryTests(unittest.TestCase):
     def test_material_navigation_resolves_within_installed_skills(self) -> None:
         skills = ROOT / 'skills'
         documents = [
-            skills / 'machine-design/references/material-sources.md',
-            skills / 'machine-design/shared/references/resources.md',
-            skills / 'machine-design/shared/references/material-permissions.md',
-            skills / 'machine-design/shared/references/profiles/ie-style.md',
-            skills / 'mod-resource-extract/SKILL.md',
-            skills / 'mod-resource-extract/references/manifest.md',
+            skills / 'block-asset-design/references/material-sources.md',
+            skills / 'block-asset-design/shared/references/resources.md',
+            skills / 'block-asset-design/shared/references/material-permissions.md',
+            skills / 'block-asset-design/shared/references/profiles/ie-style.md',
+            skills / 'block-asset-design/mod-resource-extract/SKILL.md',
+            skills / 'block-asset-design/mod-resource-extract/references/manifest.md',
             *IE.glob('*.md'),
         ]
         for document in documents:

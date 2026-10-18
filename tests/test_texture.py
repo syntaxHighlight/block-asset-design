@@ -60,7 +60,7 @@ class TextureTests(unittest.TestCase):
     def test_region_cli_preserves_existing_output(self):
         config=self.root/'panel.json'; config.write_text(json.dumps(panel()))
         out=self.root/'result'
-        command=[sys.executable,str(support.ROOT/'skills/machine-texture/scripts/fill_regions.py'),
+        command=[sys.executable,str(support.ROOT/'skills/block-asset-design/texture/scripts/fill_regions.py'),
                  '--input',str(config),'--output',str(out)]
         first=subprocess.run(command,capture_output=True,text=True)
         self.assertEqual(first.returncode,0,first.stderr)
