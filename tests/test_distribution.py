@@ -1,10 +1,10 @@
-"""Run extracted release tools from an unrelated cwd and without installed skills."""
+"""Copy an isolated installed skill's tools and run them from an unrelated cwd."""
 import hashlib
 import io
 import json
+import shutil
 import subprocess
 import sys
-import tarfile
 import tempfile
 import unittest
 import zipfile
@@ -21,12 +21,21 @@ class DistributionTests(unittest.TestCase):
         root=Path(self.temp.name)
         self.tools=root/'project tools'; self.project=root/'project assets'; self.runner=root/'unrelated cwd'
         self.project.mkdir(); self.runner.mkdir()
-        self.archive=root/'block-asset-design-scripts.tar.gz'
-        result=subprocess.run([sys.executable,'-B',str(support.ROOT/'scripts/package-asset-tools.py'),
-                               '--output',str(self.archive)],cwd=self.runner,capture_output=True,text=True)
+        self.skill=root/'installed skills/block-asset-design'
+        shutil.copytree(support.ROOT/'skills/block-asset-design',self.skill,
+                        ignore=shutil.ignore_patterns('__pycache__','*.pyc','*.pyo'))
+        # These fixture notices verify that locally installed declarations travel with tools.
+        (self.skill/'LICENSE.txt').write_text('Generated skill license fixture.')
+        (self.skill/'texture/NOTICE.txt').write_text('Generated texture notice fixture.')
+        scripts=self.skill/'shared/scripts'
+        (scripts/'.hidden.py').write_text('hidden fixture')
+        (scripts/'cache.pyc').write_bytes(b'bytecode fixture')
+        (scripts/'__pycache__').mkdir()
+        (scripts/'__pycache__/cache.py').write_text('cache fixture')
+        self.skill_installed=self.file_hashes(self.skill)
+        self.copier=self.skill/'setup/scripts/copy_tools.py'
+        result=self.copy_tools(self.tools)
         self.assertEqual(result.returncode,0,result.stderr)
-        with tarfile.open(self.archive) as package:
-            package.extractall(self.tools,filter='data')
         self.installed=self.file_hashes(self.tools)
         for p in self.tools.rglob('*'):
             p.chmod(0o555 if p.is_dir() else 0o444)
@@ -48,11 +57,17 @@ class DistributionTests(unittest.TestCase):
         return subprocess.run([sys.executable,'-B',str(self.tools/script),*map(str,args)],
                               cwd=self.runner,capture_output=True,text=True)
 
+    def copy_tools(self, output: Path) -> subprocess.CompletedProcess[str]:
+        # -I confirms copying requires only stdlib and the installed collection itself.
+        return subprocess.run([sys.executable,'-I','-B',str(self.copier),'--output',str(output)],
+                              cwd=self.runner,capture_output=True,text=True)
+
     def assert_install_untouched(self) -> None:
         self.assertEqual(self.file_hashes(self.tools),self.installed)
+        self.assertEqual(self.file_hashes(self.skill),self.skill_installed)
         self.assertEqual(list(self.runner.iterdir()),[])
 
-    def test_release_runs_diagnostics_and_atlas_cli(self) -> None:
+    def test_local_copy_runs_diagnostics_and_atlas_cli(self) -> None:
         source=self.project/'snapshot.json'; source.write_text(json.dumps(square()))
         before=source.read_bytes(); output=self.project/'build/machine-design/example/report.json'
         args=('--input',source,'--output',output,'--mode','uv','--size',16,16,'--density',16)
@@ -116,20 +131,83 @@ class DistributionTests(unittest.TestCase):
         self.assertEqual(self.file_hashes(inputs),before)
         self.assert_install_untouched()
 
-    def test_package_layout_checksum_and_reproducibility(self) -> None:
+    def test_local_copy_layout_dependencies_and_notices(self) -> None:
         self.assertEqual({path.name for path in self.tools.iterdir() if path.is_dir()},
                          {'checks','texture','review','resources'})
         for relative in ('texture/requirements.txt','resources/requirements.txt'):
             self.assertIn('Pillow>=10',(self.tools/relative).read_text())
+        self.assertEqual((self.tools/'LICENSE.txt').read_bytes(),(self.skill/'LICENSE.txt').read_bytes())
+        for family in ('checks','texture','review','resources'):
+            self.assertEqual((self.tools/family/'LICENSE.txt').read_bytes(),
+                             (self.skill/'LICENSE.txt').read_bytes())
+        self.assertEqual((self.tools/'texture/NOTICE.txt').read_bytes(),
+                         (self.skill/'texture/NOTICE.txt').read_bytes())
         self.assertFalse(any('skills' in Path(name).parts or '__pycache__' in Path(name).parts
+                             or any(part.startswith('.') for part in Path(name).parts)
                              or name.endswith(('.pyc','.pyo')) for name in self.installed))
-        expected=f'{hashlib.sha256(self.archive.read_bytes()).hexdigest()}  {self.archive.name}\n'
-        self.assertEqual(self.archive.with_name(self.archive.name+'.sha256').read_text(),expected)
-        original=self.archive.read_bytes()
-        result=subprocess.run([sys.executable,'-B',str(support.ROOT/'scripts/package-asset-tools.py'),
-                               '--output',str(self.archive)],cwd=self.runner,capture_output=True,text=True)
+        self.assert_install_untouched()
+
+    def test_existing_copy_is_rejected_and_local_adaptations_are_preserved(self) -> None:
+        self.make_install_writable()
+        (self.tools/'checks/mesh_checks.py').write_text('project-local adaptation')
+        (self.tools/'local.txt').write_text('project-local extra file')
+        adapted=self.file_hashes(self.tools)
+        result=self.copy_tools(self.tools)
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn('output already exists',result.stderr)
+        self.assertEqual(self.file_hashes(self.tools),adapted)
+        self.assertEqual(self.file_hashes(self.skill),self.skill_installed)
+
+    def test_existing_empty_directory_file_and_broken_symlink_are_rejected(self) -> None:
+        for kind in ('directory','file','symlink'):
+            output=self.project/kind
+            if kind=='directory':
+                output.mkdir()
+            elif kind=='file':
+                output.write_text('existing file')
+            else:
+                output.symlink_to(self.project/'missing')
+            with self.subTest(kind=kind):
+                result=self.copy_tools(output)
+                self.assertNotEqual(result.returncode,0)
+                self.assertIn('output already exists',result.stderr)
+        self.assertEqual(list((self.project/'directory').iterdir()),[])
+        self.assertEqual((self.project/'file').read_text(),'existing file')
+        self.assertEqual((self.project/'symlink').readlink(),self.project/'missing')
+        self.assert_install_untouched()
+
+    def test_failed_copy_removes_only_the_new_output(self) -> None:
+        output=self.project/'failed tools'
+        code='''
+import importlib.util
+from pathlib import Path
+import sys
+from unittest.mock import patch
+spec = importlib.util.spec_from_file_location('copy_tools', sys.argv[1])
+module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+original = module.shutil.copy2
+calls = 0
+def fail_after_first_copy(source: Path, target: Path) -> None:
+    global calls
+    calls += 1
+    if calls == 2:
+        raise OSError('injected copy failure')
+    original(source, target)
+with patch.object(module.shutil, 'copy2', side_effect=fail_after_first_copy):
+    try:
+        module.copy_tools(Path(sys.argv[2]))
+    except OSError as error:
+        assert str(error) == 'injected copy failure'
+    else:
+        raise AssertionError('copy unexpectedly succeeded')
+assert calls == 2
+'''
+        result=subprocess.run([sys.executable,'-I','-B','-c',code,str(self.copier),str(output)],
+                              cwd=self.runner,capture_output=True,text=True)
         self.assertEqual(result.returncode,0,result.stderr)
-        self.assertEqual(self.archive.read_bytes(),original)
+        self.assertFalse(output.exists())
+        self.assertTrue(output.parent.is_dir())
         self.assert_install_untouched()
 
     def test_blender_dependencies_import_without_source_checkout(self) -> None:
@@ -154,19 +232,19 @@ assert 'bpy' not in sys.modules
         self.assertEqual(result.returncode,0,result.stderr)
         self.assert_install_untouched()
 
-    def test_source_checkout_atlas_imports_checks(self) -> None:
+    def test_isolated_skill_atlas_imports_checks(self) -> None:
         code='''
 import importlib.util
 from pathlib import Path
 import sys
 root = Path(sys.argv[1]).resolve()
-spec = importlib.util.spec_from_file_location('blender_atlas', root / 'block-asset-design/texture/scripts/blender_atlas.py')
+spec = importlib.util.spec_from_file_location('blender_atlas', root / 'texture/scripts/blender_atlas.py')
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 for name in ('blender_objects', 'mesh_math'):
-    assert Path(sys.modules[name].__file__).parent == root / 'block-asset-design/shared/scripts', name
+    assert Path(sys.modules[name].__file__).parent == root / 'shared/scripts', name
 '''
-        result=subprocess.run([sys.executable,'-I','-B','-c',code,str(support.ROOT/'skills')],
+        result=subprocess.run([sys.executable,'-I','-B','-c',code,str(self.skill)],
                               cwd=self.runner,capture_output=True,text=True)
         self.assertEqual(result.returncode,0,result.stderr)
         self.assert_install_untouched()

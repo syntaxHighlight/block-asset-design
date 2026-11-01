@@ -18,7 +18,7 @@ npx skills add syntaxHighlight/block-asset-design --skill block-asset-design
 
 ## 素材与许可
 
-[素材库入口](skills/block-asset-design/references/material-sources.md)随技能安装，可用于查找 IE 常用素材及其来源。安装包仅包含素材目录与许可文本，不附带 IE 或 Minecraft 原图、裁切图、模型及其预览；工具 release 附件也只提供脚本。确认用途获准后，再从本地来源提取所需素材到目标项目。
+[素材库入口](skills/block-asset-design/references/material-sources.md)随技能安装，可用于查找 IE 常用素材及其来源。安装包仅包含素材目录与许可文本，不附带 IE 或 Minecraft 原图、裁切图、模型及其预览。确认用途获准后，再从本地来源提取所需素材到目标项目。
 
 调用用途受限的素材前，助手会按[用途与授权确认](skills/block-asset-design/shared/references/material-permissions.md)说明限制，并询问尚未明确的用途。仅要求“调用 IE 素材”并不代表确认用于 IE 附属模组；同一用途在当前会话中已明确时，不重复询问。用户的用途确认不能代替权利人的许可。
 
@@ -26,7 +26,7 @@ npx skills add syntaxHighlight/block-asset-design --skill block-asset-design
 
 ## 使用
 
-首次需要配套脚本时，[tool-setup](skills/block-asset-design/setup/SKILL.md) 会从指定的 release 附件下载脚本，放入目标项目。后续任务可按需修改这份副本，重复 setup 会保留已有修改。setup 负责准备文件，助手会在使用时审阅脚本、按项目需要适配并验证。
+首次需要配套脚本时，[tool-setup](skills/block-asset-design/setup/SKILL.md) 会将随技能安装的脚本复制到目标项目，无需额外下载或发布工具包。后续任务可按需修改这份副本，重复 setup 会保留已有修改。setup 负责准备文件，助手会在使用时审阅脚本、按项目需要适配并验证。
 
 向助手说明目标，并提供模型路径和参考资料，例如：
 
@@ -50,3 +50,4 @@ npx skills add syntaxHighlight/block-asset-design --skill block-asset-design
 - [贴图工具](skills/block-asset-design/texture/references/texture-pipeline.md)
 - [模组资源提取](skills/block-asset-design/mod-resource-extract/SKILL.md)
 - [开发与测试](tests/README.md)
+- [分发简化与移除 SkVM 的决定](docs/adr/0001-simplify-distribution-and-remove-skvm.md)

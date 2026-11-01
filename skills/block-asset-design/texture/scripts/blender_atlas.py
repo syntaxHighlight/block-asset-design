@@ -7,7 +7,7 @@ import math
 import statistics
 import sys
 from pathlib import Path
-# Release packages keep the checks beside texture; source checkouts retain skills/.
+# Project tool copies keep checks beside texture; installed skills retain their layout.
 _script_dir = Path(__file__).resolve().parent
 _checks_dir = _script_dir.parent / 'checks'
 if not _checks_dir.is_dir():

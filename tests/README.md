@@ -33,7 +33,7 @@ blender --background --factory-startup --disable-autoexec --python-exit-code 1 -
 | 贴图 | 像素覆盖、孔洞与透明边、轮廓方向、小于单个像素的面、结构边重复染色、原图坐标方向、图集映射与哈希 |
 | 资源提取 | 精确裁切、许可记录、哈希、包外声明文件、路径与输出保护，以及失败后是否残留输出 |
 | 素材目录 | IE 发布目录仅含明确列出的元数据文件，固定来源与许可哈希未变，安装后素材与授权入口的相对链接有效；新增原图、预览或其他文件前，须核实分发依据，再调整白名单 |
-| 工具分发 | 构建并解压 release 脚本包，从第三个目录运行检查、图集、板件和资源提取工具；在隔离进程中确认 Blender 工具的跨目录依赖来自包内；检查包布局、依赖清单、校验和、打包结果是否可重复，以及产物路径和输入文件保留情况 |
+| 工具分发 | 从隔离安装的技能集合复制项目工具，从第三个目录运行检查、图集、板件和资源提取工具；在隔离进程中确认 Blender 工具的跨目录依赖来自项目工具目录；检查工具布局、依赖清单、已有目录拒绝覆盖，以及产物路径和输入文件保留情况 |
 | 技能集合 | 将整个集合复制到隔离目录，确认各子技能与共享资料的相对链接都留在集合内且目标存在，并检查技能名称唯一 |
 | Blender | 对象选择范围、世界坐标、求值网格、场景盘点、UV 导出与写回、保存后重新打开、源文件与源 UV 保留、失败回滚、帧和视图状态恢复 |
 
@@ -43,12 +43,12 @@ blender --background --factory-startup --disable-autoexec --python-exit-code 1 -
 
 目录或分发方式变化时，再从独立临时项目运行 `npx skills add /absolute/path/to/this-repo --skill block-asset-design --agent opencode codex --copy -y`，确认只安装一个集合，并保留嵌套技能及共享资料。普通工具测试不代替安装器验证，也不代表真实客户端中的游戏验收已经通过。
 
-## 构建 release 脚本包
+## 准备项目工具副本
 
-打包仅使用 Python 标准库，不运行 Blender 或检查脚本：
+复制仅使用 Python 标准库，不运行 Blender 或资产工具：
 
 ```sh
-python3 scripts/package-asset-tools.py --output /tmp/block-asset-design-scripts.tar.gz
+python3 skills/block-asset-design/setup/scripts/copy_tools.py --output /tmp/block-asset-design-tools
 ```
 
-命令同时生成 `block-asset-design-scripts.tar.gz.sha256`。包根直接包含 `checks/`、`texture/`、`review/`、`resources/`，各工具所需的依赖清单放在对应目录。已有的适用许可和声明文件一并保留。解压后的工具不依赖技能安装位置或源码仓库。
+目标目录必须不存在。工具根直接包含 `checks/`、`texture/`、`review/`、`resources/`，各工具所需的依赖清单放在对应目录，适用声明一并保留。复制后的工具不依赖技能安装位置或源码仓库。升级时先复制到临时目录，再比较合并项目副本。
